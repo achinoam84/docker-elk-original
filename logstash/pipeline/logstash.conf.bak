@@ -1,0 +1,31 @@
+input {
+	beats {
+		port => 5044
+	}
+
+	tcp {
+		port => 5000
+	}
+
+	udp {
+		port => 1514
+	}
+
+}
+
+
+## Add your filters / logstash plugins configuration here
+
+output {
+	elasticsearch {
+		hosts => "elasticsearch:9200"
+		user => "elastic"
+<<<<<<< HEAD
+		password => "changemeELK2020"
+		index => "edge-%{+YYYY.MM.dd}"
+=======
+		password => "changeme"
+		ecs_compatibility => disabled
+>>>>>>> ff3506483637fd62dbb57487b0e8ab1498ab1c9d
+	}
+}
